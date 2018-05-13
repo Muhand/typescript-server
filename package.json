@@ -12,6 +12,7 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.17.0",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "gulp": "^3.9.1",
