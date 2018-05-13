@@ -17,6 +17,7 @@
     "gulp": "^3.9.1",
     "gulp-typescript": "^4.0.2",
     "mocha": "^5.1.1",
-    "ts-node": "^6.0.3"
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
   }
 }
