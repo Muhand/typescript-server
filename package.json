@@ -1,0 +1,10 @@
+{
+  "name": "typescript-server",
+  "version": "1.0.0",
+  "description": "A basic typescript server",
+  "main": "src/index.js",
+  "repository": "https://github.com/Muhand/typescript-server.git",
+  "author": "Muhand Jumah <muhandjumah@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
