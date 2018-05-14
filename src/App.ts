@@ -29,8 +29,8 @@ class App {
      * API endpoints */
     // let router = express.Router();
 
-    // // placeholder route handler
-    // router.get('/', (req, res, next) => {
+    // placeholder route handler
+    // this.express.get('/', (req, res, next) => {
     //   res.json({
     //     message: 'Welcome!'
     //   });
