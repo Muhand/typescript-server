@@ -1,7 +1,8 @@
-import * as Home from './home';
-import * as express from 'express';
+import { Route } from "../helpers/Route";
 
-
-export default {
-    Home
-};
+export class IndexRoute extends Route {
+    constructor() {
+        super()
+        this.url = '/'
+    }
+}
