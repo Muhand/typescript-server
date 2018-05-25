@@ -1,7 +1,9 @@
 import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
-import * as router from './routes/index';
+import { Route } from './helpers/Route';
+import { IndexRoute } from './controllers/index';
+import * as home from './controllers/home';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -24,19 +26,17 @@ class App {
 
   // Configure API endpoints.
   private routes(): void {
-    /* This is just to get up and running, and to make sure what we've got is
-     * working so far. This function will change when we start to add more
-     * API endpoints */
-    // let router = express.Router();
-
-    // placeholder route handler
-    // this.express.get('/', (req, res, next) => {
-    //   res.json({
-    //     message: 'Welcome!'
-    //   });
-    // });
-    this.express.use('/', router);
-  }
+    let routers: Array<Route> = [new IndexRoute]
+    
+    routers.forEach(route => {
+      // this.express.use(route.url, (req: express.Request, res: express.Response, next: () => void) => {
+      this.express.use(route.url, home => {
+        console.log(route.url);
+        // next();
+      })
+      
+    });     // End of routes loop
+  } // End of setting up routes
 
 }
 
