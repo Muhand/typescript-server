@@ -29,11 +29,10 @@ class App {
     let routers: Array<Route> = [new IndexRoute]
     
     routers.forEach(route => {
-      // this.express.use(route.url, (req: express.Request, res: express.Response, next: () => void) => {
-      this.express.use(route.url, home => {
+      this.express.use(route.url, (req: express.Request, res: express.Response, next: () => void) => {
         console.log(route.url);
         // next();
-      })
+      });
       
     });     // End of routes loop
   } // End of setting up routes
