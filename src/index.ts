@@ -1,5 +1,5 @@
 import * as http from 'http';
-import App from './app';
+import App from './App';
 
 const port = normalizePort(process.env.PORT || 3000);
 App.set('port', port);
