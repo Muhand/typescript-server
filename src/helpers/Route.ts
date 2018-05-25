@@ -1,11 +1,6 @@
-import * as express from 'express';
+import * as express from 'express'
 
-class Route {
-    public api:express.Router;
-
-    constructor(){
-        this.api = express.Router()
-    }
+export class Route {
+    routehandler: (req: express.Request, res: express.Response, next: Function) => {}
+    url: string
 }
-
-export default Route;
