@@ -1,28 +1,42 @@
-import Route from '../helpers/Route';
-import IRoute from '../helpers/IRoute';
+// //Import modules
+// import { Router } from 'express';
 
-class Home extends Route implements IRoute {
+// class Home {
+//     public api: Router;
 
-    // private Path = {
-    //     home: '/'
-    // }
-    Paths = {
-        home:'/',
-    }
+//     constructor(){
+//         this.api = Router();
+//         this.home();
+//     }
 
-    // Paths = {
-    //     'home':'test'
-    // }
-    constructor(){
-        super();
-    }
+//     private home(){
+//         // '/v1/'
+//         this.api.get('/', (req, res)=>{
+//             res.json({
+//                 message: 'Welcome!'
+//             });
+//         });    
+//     }
+// }
 
-    setup(){
-        this.api.post(this.Paths.home, this.home);
-    }
+// export default new Home().api
 
-    private home(req, res){
-    }
+//Import modules
+import { Router } from 'express';
+
+//Export router
+export default () => {
+    console.log(`<dfasdf`);
+    
+  let api = Router();
+  
+  this.api.get('/', (req, res)=>{
+      console.log(`GOOTTT`);
+      
+      res.json({
+          message: 'Welcome!'
+        });
+    }); 
+
+  return api;
 }
-
-export default new Home().api
