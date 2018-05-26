@@ -27,6 +27,20 @@ class App {
   // Configure API endpoints.
   private routes(): void {
     let routes = new Routes(this.express);
+
+    //#region Handle index routes
+    let indexRouter = express.Router();
+    indexRouter.get('/', (req, res, next) => {
+      res.redirect('/home');
+    });
+    this.express.use('/', indexRouter);
+    //#endregion
+    
+    //#region handle errors/statuscodes
+    this.express.use(function (req, res, next) {
+      res.status(404).send("404")
+    })
+    //#endregion
   }
 }
 
