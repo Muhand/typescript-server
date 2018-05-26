@@ -1,42 +1,34 @@
-// //Import modules
-// import { Router } from 'express';
+import {Router, Request, Response, NextFunction} from 'express';
+import { Route } from "../helpers/Route";
 
-// class Home {
-//     public api: Router;
-
-//     constructor(){
-//         this.api = Router();
-//         this.home();
-//     }
-
-//     private home(){
-//         // '/v1/'
-//         this.api.get('/', (req, res)=>{
-//             res.json({
-//                 message: 'Welcome!'
-//             });
-//         });    
-//     }
-// }
-
-// export default new Home().api
-
-//Import modules
-import { Router } from 'express';
-
-//Export router
-export default () => {
-    console.log(`<dfasdf`);
+export class Home extends Route {
+    constructor() {
+        super()
+        this.init();
+        this.setupRoutes();
+    }
     
-  let api = Router();
-  
-  this.api.get('/', (req, res)=>{
-      console.log(`GOOTTT`);
-      
-      res.json({
-          message: 'Welcome!'
-        });
-    }); 
+    //#region conform to Route classs
+    init() {
+        this.url = '/'
+        this.router = Router()
+    }
 
-  return api;
+    setupRoutes() {
+        this.router.get('/', this.getAll);
+    }
+    //#endregion
+
+    public getAll(req: Request, res:Response, next: NextFunction) {
+        res.send("WELCOME");
+    }
+}
+
+const x = new Home();
+module.exports = {
+    url: x.url,
+    router: x.router,
+    init: () => {
+        x.init();
+    }
 }
