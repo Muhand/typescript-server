@@ -2,8 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { Route } from './helpers/Route';
-import { Routes, routers } from './controllers/index';
-import * as home from './controllers/home';
+import { Routes, routers } from './routes/index';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -35,7 +34,7 @@ class App {
     });
     this.express.use('/', indexRouter);
     //#endregion
-    
+
     //#region handle errors/statuscodes
     this.express.use(function (req, res, next) {
       res.status(404).send("404")
