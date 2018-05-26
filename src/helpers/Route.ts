@@ -3,7 +3,6 @@ import {Router, Request, Response, NextFunction} from 'express';
 
 export abstract class Route {
     private _router: Router    
-    private _url: string
     abstract init(): void
     abstract setupRoutes(): void
 
@@ -13,12 +12,6 @@ export abstract class Route {
     }
     set router(router:Router) {
         this._router = router
-    }
-    get url(): string {
-        return this._url
-    }
-    set url(url:string) {
-        this._url = url
     }
     //#endregion
 }
