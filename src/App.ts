@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import { Route } from './helpers/Route';
-import { IndexRoute } from './controllers/index';
+import { Routes, routers } from './controllers/index';
 import * as home from './controllers/home';
 
 // Creates and configures an ExpressJS web server.
@@ -26,17 +26,8 @@ class App {
 
   // Configure API endpoints.
   private routes(): void {
-    let routers: Array<Route> = [new IndexRoute]
-    
-    routers.forEach(route => {
-      this.express.use(route.url, (req: express.Request, res: express.Response, next: () => void) => {
-        console.log(route.url);
-        // next();
-      });
-      
-    });     // End of routes loop
-  } // End of setting up routes
-
+    let routes = new Routes(this.express);
+  }
 }
 
 export default new App().express;
