@@ -13,13 +13,13 @@ export class Routes {
         this.routers = []
         if(express != null) {
             this.express = express;
-            this.registerRoute(this.express);
+            this.registerRoutes(this.express);
         } else {
-            this.registerRoute();
+            this.registerRoutes();
         }
     }
 
-    private registerRoute(express?: express.Application) {
+    private registerRoutes(express?: express.Application) {
         // Loop through every file in this folder ignoring index.ts
         fs
             .readdirSync(__dirname)
@@ -42,7 +42,7 @@ export class Routes {
                 if (express != null) {
                     // If it is not null then register every route to that 
                     // express by using this.express.use(route.url, route.router)
-                    express.use(temp.url, temp.router);
+                    express.use(`/${fileName}`, temp.router);
                 }
             });
     }
