@@ -15,11 +15,11 @@ export class Home extends Route {
     }
 
     setupRoutes() {
-        this.router.get('/', this.getAll);
+        this.router.get('/', this.root);
     }
     //#endregion
 
-    public getAll(req: Request, res:Response, next: NextFunction) {
+    public root(req: Request, res:Response, next: NextFunction) {
         res.send("WELCOME");
     }
 }
