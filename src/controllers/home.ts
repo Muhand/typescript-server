@@ -10,7 +10,6 @@ export class Home extends Route {
     
     //#region conform to Route classs
     init() {
-        this.url = '/'
         this.router = Router()
     }
 
@@ -26,7 +25,6 @@ export class Home extends Route {
 
 const x = new Home();
 module.exports = {
-    url: x.url,
     router: x.router,
     init: () => {
         x.init();
