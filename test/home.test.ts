@@ -7,10 +7,10 @@ import app from '../src/app';
 chai.use(chaiHttp);
 const expect = chai.expect;
 
-describe('baseRoute', () => {
+describe('/home', () => {
 
   it('should be json', () => {
-    return chai.request(app).get('/')
+    return chai.request(app).get('/home')
     .then(res => {
       expect(res.type).to.eql('application/json');
     });

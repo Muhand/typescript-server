@@ -19,7 +19,7 @@ export class Home extends Route {
     //#endregion
 
     public root(req: Request, res:Response, next: NextFunction) {
-        res.send("WELCOME");
+        res.json({message:"Welcome!"});
     }
 }
 
